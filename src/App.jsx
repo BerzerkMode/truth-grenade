@@ -1,34 +1,34 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+const firebaseConfig = {
+  apiKey: "AIzaSyANnzyiwPlEZU0X3EkeBANxfP6ukYR5pNY",
+  authDomain: "projekt-e99a9.firebaseapp.com",
+  projectId: "projekt-e99a9",
+  storageBucket: "projekt-e99a9.firebasestorage.app",
+  messagingSenderId: "1000920976054",
+  appId: "1:1000920976054:web:6759684f27e45ec0173417"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='app'>
+      <div className="info">
+        truth nuke
+        truth grenade
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+     
+      <div className="kep">
+        <img src="https://www.shutterstock.com/image-photo/asphalt-road-goes-nuclear-explosion-600nw-2284503417.jpg" alt="" />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
+    
   )
 }
 

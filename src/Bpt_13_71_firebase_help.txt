@@ -1,0 +1,17 @@
+
+const fbApp = initializeApp(firebaseConfig);
+const db = getFirestore(fbApp);
+
+const docRef = doc(db, "collectionNev", "documentID");
+const docSnap = await getDoc(docRef);
+if (docSnap.exists()) console.log(docSnap.data());
+
+const adatCollection = collection(db, 'collectionNev');
+const adatSnapshot = await getDocs(adatCollection);
+const adatSnapshot = await getDocs(query(adatCollection, where("mezonev", ">", ertek)));
+const adatList = adatSnapshot.docs.map(doc => doc.data()); // ID nélkül!
+const adatList = adatSnapshot.docs.map(doc => ({ ...doc.data(), id:doc.id })); // ID is!
+
+await addDoc(adatCollection, {objektum}); // AutoID!
+await setDoc(doc(adatCollection, "documentID"), {objektum}); // ID!
+await deleteDoc(doc(db, "collectionNev", "documentID"));

@@ -1,0 +1,12 @@
+
+ * import { getAuth } from "firebase/auth";
+   const auth = getAuth(app);
+
+ * await signInWithEmailAndPassword(auth, email, password);
+   await signInWithPopup(auth, new GoogleAuthProvider());
+
+ * await signOut(auth);
+
+ * const [user, setUser] = useState({});
+   onAuthStateChanged(auth, (currentUser) => setUser(currentUser)); // useEffect!
+   {user ? <Valami /> : <Login />}
