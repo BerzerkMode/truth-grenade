@@ -1,16 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { firebaseConfig } from "./firebaseConfig";
 import { useState } from 'react'
 import './App.css'
-
-const firebaseConfig = {
-  apiKey: "AIzaSyANnzyiwPlEZU0X3EkeBANxfP6ukYR5pNY",
-  authDomain: "projekt-e99a9.firebaseapp.com",
-  projectId: "projekt-e99a9",
-  storageBucket: "projekt-e99a9.firebasestorage.app",
-  messagingSenderId: "1000920976054",
-  appId: "1:1000920976054:web:6759684f27e45ec0173417"
-};
+import { Button } from "@mui/material";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -22,6 +15,7 @@ function App() {
       <div className="info">
         truth nuke
         truth grenade
+        <Button variant="contained">Contained</Button>
       </div>
      
       <div className="kep">
