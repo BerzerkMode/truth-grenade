@@ -1,29 +1,30 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { firebaseConfig } from "./firebaseConfig";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from 'react'
 import './App.css'
-import { Button } from "@mui/material";
+import Login from "./Login";
+import { useEffect } from "react";
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export default function App() {
 
-function App() {
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+
+  let [user, setUser] = useState({});
+
+  useEffect(() => {
+      onAuthStateChanged(auth, (currentUser) => setUser(currentUser));
+  }, [])
 
   return (
     <div className='app'>
-      <div className="info">
-        truth nuke
-        truth grenade
-        <Button variant="contained">Contained</Button>
-      </div>
-     
-      <div className="kep">
-        <img src="https://www.shutterstock.com/image-photo/asphalt-road-goes-nuclear-explosion-600nw-2284503417.jpg" alt="" />
-      </div>
+      <Login auth={auth} user={user} />
+
     </div>
-    
   )
 }
 
-export default App
+
