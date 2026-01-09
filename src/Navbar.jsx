@@ -13,23 +13,25 @@ export default function Navbar({ user, darkMode, setDarkMode }) {
   const location = useLocation();
 
   const getButtonStyle = (path) => ({
-    color: location.pathname === path ? '#fff' : 'rgba(255,255,255,0.7)',
+    color: '#fff', // A sötét barna és a világosabb barna felett is a fehér látszik jól
     fontWeight: location.pathname === path ? 'bold' : 'normal',
-    textTransform: 'none', // Barátságosabb kisbetűs/nagybetűs írásmód
-    fontSize: '1rem'
+    textTransform: 'none',
+    fontSize: '1rem',
+    opacity: location.pathname === path ? 1 : 0.8
   });
 
   return (
     <AppBar position="static" sx={{ 
       mb: 3, 
-      backgroundColor: '#41302c', // A kért egyedi szín
-      backgroundImage: 'none',     // Eltávolítjuk a Material UI alapértelmezett sötét módos textúráját
+      // DINAMIKUS SZÍN: Sötét módban az eredeti #41302c, világosban egy kicsit világosabb barna vagy kék
+      backgroundColor: darkMode ? '#132f4c' : '#5d4037', 
+      backgroundImage: 'none',
       boxShadow: '0 2px 10px rgba(0,0,0,0.3)'
     }}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold', letterSpacing: 1 }}>
-             💬 ChatApp
+          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold', letterSpacing: 1, color: '#fff' }}>
+             💬 Messenger
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 1 }}>
@@ -49,19 +51,19 @@ export default function Navbar({ user, darkMode, setDarkMode }) {
               onClick={() => setDarkMode(!darkMode)} 
               color="inherit"
               title={darkMode ? "Világos mód" : "Sötét mód"}
-              sx={{ '&:hover': { backgroundColor: 'rgba(255,255,255,0.1)' } }}
+              sx={{ color: '#fff' }}
             >
               {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
 
             <Button 
-                color="inherit" 
                 variant="outlined" 
                 size="small" 
                 onClick={() => signOut(auth)}
                 startIcon={<LogoutIcon />}
                 sx={{ 
                   ml: 1, 
+                  color: '#fff',
                   borderColor: 'rgba(255,255,255,0.5)',
                   '&:hover': { borderColor: '#fff', backgroundColor: 'rgba(255,255,255,0.1)' }
                 }}

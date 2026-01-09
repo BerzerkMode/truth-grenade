@@ -77,7 +77,7 @@ export default function Chat({ user, darkMode }) {
 
   const getBubbleStyle = (isOwn) => {
     if (darkMode) {
-      return { backgroundColor: isOwn ? '#8A8077' : '#685C55', color: '#ffffff' };
+      return { backgroundColor: isOwn ? '#8A8077' : '#524944ff', color: '#ffffff' };
     } else {
       return { backgroundColor: isOwn ? '#C47F3E' : '#685C55', color: '#ffffff', border: isOwn ? 'none' : '1px solid #e0e0e0' };
     }
