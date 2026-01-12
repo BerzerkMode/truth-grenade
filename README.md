@@ -6,6 +6,8 @@ Ez egy egyszerű **üzenetküldő** alkalmazás.
 > Van regisztráció </br>
 > és van Névjegy
 
+A **tesztelési** dokumentáció külön [oldalon]() található.
+
 ## Képernyőképek
 
 > [!TIP]
