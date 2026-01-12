@@ -1,6 +1,6 @@
 # Truth Grenade
 
-Ez egy egyszerű üzenetküldő alkalmazás.
+Ez egy egyszerű **üzenetküldő** alkalmazás.
 
 Currently, two official plugins are available:
 
