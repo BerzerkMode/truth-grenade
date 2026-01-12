@@ -6,7 +6,7 @@ Ez egy egyszerű **üzenetküldő** alkalmazás.
 > Van regisztráció </br>
 > és van Névjegy
 
-A **tesztelési** dokumentáció külön [oldalon]() található.
+A **tesztelési** dokumentáció külön [oldalon](teszt.md) található.
 
 ## Képernyőképek
 
