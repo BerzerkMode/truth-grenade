@@ -1,8 +1,8 @@
 # Truth Grenade
 
 Ez egy egyszerű **üzenetküldő** alkalmazás.
-> Van egy kezdőoldal bejelentkezés,
-> Van regisztráció
+> Van egy kezdőoldal bejelentkezés,  
+> Van regisztráció </br>
 > és van Névjegy
 
 Currently, two official plugins are available:
