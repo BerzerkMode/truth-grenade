@@ -1,7 +1,7 @@
 # Truth Grenade
 
 Ez egy egyszerű **üzenetküldő** alkalmazás.
-[!NOTE]  
+> [!NOTE]
 > Van egy kezdőoldal bejelentkezés,  
 > Van regisztráció </br>
 > és van Névjegy
